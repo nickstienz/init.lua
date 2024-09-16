@@ -28,12 +28,26 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
-           },
+            },
             handlers = {
                 function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
+                end,
+
+                ["rust_analyzer"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.rust_analyzer.setup({
+                        capabilities = capabilities,
+                        settings = {
+                            cargo = { all_features = true },
+                            check = {
+                                command = "clippy",
+                            },
+                            checkOnSave = true,
+                        }
+                    })
                 end,
 
                 ["lua_ls"] = function()
@@ -71,8 +85,8 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
             }, {
-                    { name = 'buffer' },
-                })
+                { name = 'buffer' },
+            })
         })
 
         vim.diagnostic.config({
