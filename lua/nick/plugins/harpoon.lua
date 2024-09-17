@@ -14,12 +14,12 @@ return {
         local keymap = vim.keymap
 
         function map(number)
-            keymap.set("n", ("<leader>"..number), function() harpoon:list():select(number) end, { desc = ("Open harpoon "..number) })
+            keymap.set("n", ("<leader>"..number), function() harpoon:list():select(number) end, { desc = ("Navigate to harpoon "..number) })
             keymap.set("n", ("<leader>h"..number), function() harpoon:list():replace_at(number) end, { desc = ("Set harpoon "..number.." to current buffer") })
         end
 
         keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Add file to harpoon" })
-        keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Open harpoon menu" })
+        keymap.set("n", "<C-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Open harpoon menu" })
 
         for x = 1, 5 do
             map(x)
