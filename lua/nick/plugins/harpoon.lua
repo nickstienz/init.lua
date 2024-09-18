@@ -19,7 +19,7 @@ return {
         end
 
         keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Add file to harpoon" })
-        keymap.set("n", "<C-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Open harpoon menu" })
+        keymap.set("n", "<leader>he", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Open harpoon menu" })
 
         for x = 1, 5 do
             map(x)
