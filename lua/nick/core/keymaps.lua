@@ -4,7 +4,7 @@ local keymap = vim.keymap
 
 keymap.set("n", "<C-s>", ":w<CR>", { desc = "Saves current buffer" })
 
-keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Opens netrw" })
+keymap.set("n", "<leader>nr", vim.cmd.Ex, { desc = "Opens netrw" })
 
 keymap.set("n", "<leader>ch", ":nohl<CR>", { desc = "Clear search highlights" })
 
