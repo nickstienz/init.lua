@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("nick.plugins", {
+require("lazy").setup({ { import = "nick.plugins" }, { import = "nick.plugins.lsp" } }, {
     change_detection = {
         notify = false,
     },
