@@ -39,6 +39,7 @@ return {
                 "regex",
                 "rust",
                 "toml",
+                "yaml",
             },
             incremental_selection = {
                 enable = true,

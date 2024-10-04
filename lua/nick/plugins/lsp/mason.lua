@@ -21,6 +21,7 @@ return {
         mason_lspconfig.setup({
             ensure_installed = {
                 "lua_ls",
+                "ltex",
                 "jdtls",
                 "rust_analyzer",
             }
