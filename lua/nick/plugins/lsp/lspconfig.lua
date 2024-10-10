@@ -68,6 +68,23 @@ return {
                 })
             end,
 
+            ["rust_analyzer"] = function()
+                vim.cmd(":let g:rustfmt_autosave = 1")
+                lspconfig["rust_analyzer"].setup({
+                    capabilities = capabilities,
+                    settings = {
+                        ["rust-analyzer"] = {
+                            checkOnSave = true,
+                            check = {
+                                enable = true,
+                                command = "clippy",
+                                features = "all",
+                            }
+                        }
+                    }
+                })
+            end,
+
             ["lua_ls"] = function()
                 lspconfig["lua_ls"].setup({
                     capabilities = capabilities,
