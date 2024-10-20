@@ -20,6 +20,8 @@ return {
 
         mason_lspconfig.setup({
             ensure_installed = {
+                "cssls",
+                "html",
                 "lua_ls",
                 "ltex",
                 "jdtls",
